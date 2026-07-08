@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="System dynamics simulation of electric vehicle diffusion in Germany."
+    />
+    <title>Germany EV Diffusion | System Dynamics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">
+        <span>EV</span>
+        <strong>Germany EV Diffusion</strong>
+      </a>
+      <nav aria-label="Project navigation">
+        <a href="#model">Model</a>
+        <a href="#experiments">Experiments</a>
+        <a href="#downloads">Downloads</a>
+        <a href="https://github.com/fbaakyildiz/Germany-EV-Diffusion-System-Dynamics" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">System dynamics simulation</p>
+          <h1>Electric vehicle diffusion in Germany through feedback loops.</h1>
+          <p class="hero-text">
+            A model-based exploration of EV adoption, charging infrastructure,
+            consumer utility, technology learning, and policy leverage points.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#model">Explore model</a>
+            <a class="button secondary" href="models/base_model.mdl">Download base model</a>
+          </div>
+        </div>
+        <aside class="signal-panel" aria-label="Project highlights">
+          <div class="signal-card">
+            <span>2045</span>
+            <small>long-term horizon</small>
+          </div>
+          <div class="signal-grid">
+            <div>
+              <strong>Method</strong>
+              <span>System dynamics</span>
+            </div>
+            <div>
+              <strong>Domain</strong>
+              <span>EV adoption and transport decarbonization</span>
+            </div>
+            <div>
+              <strong>Output</strong>
+              <span>Policy and scenario comparison</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" id="model">
+        <div class="section-heading">
+          <p class="eyebrow">Model structure</p>
+          <h2>Adoption is modeled as an interacting system, not a static forecast.</h2>
+        </div>
+        <div class="loop-grid">
+          <article>
+            <span class="loop-index">01</span>
+            <h3>Charging infrastructure</h3>
+            <p>More EVs increase charger demand. Additional stations reduce waiting time and improve EV convenience after a construction delay.</p>
+          </article>
+          <article>
+            <span class="loop-index">02</span>
+            <h3>Consumer utility</h3>
+            <p>Adoption depends on purchase price, operating cost, range, charging convenience, and social exposure.</p>
+          </article>
+          <article>
+            <span class="loop-index">03</span>
+            <h3>Technology learning</h3>
+            <p>EV range, price, and efficiency improve over time, changing the attractiveness of EVs relative to conventional vehicles.</p>
+          </article>
+          <article>
+            <span class="loop-index">04</span>
+            <h3>Word of mouth</h3>
+            <p>Higher EV share increases consumer exposure to EV ownership, reinforcing future adoption.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section dark" id="experiments">
+        <div class="section-heading">
+          <p class="eyebrow">Experiments</p>
+          <h2>Policy and scenario variants included in the model package.</h2>
+        </div>
+        <div class="experiment-grid">
+          <article>
+            <strong>Base simulation</strong>
+            <p>Baseline trajectory for EV and conventional vehicle stocks under default assumptions.</p>
+          </article>
+          <article>
+            <strong>Fast charger policy</strong>
+            <p>Tests whether increasing the desired fast-charger share improves adoption through charging convenience.</p>
+          </article>
+          <article>
+            <strong>Fuel price scenario</strong>
+            <p>Tests how increased conventional fuel prices change the operating-cost utility of EVs.</p>
+          </article>
+          <article>
+            <strong>Technology advancement</strong>
+            <p>Tests stronger EV progress in range, efficiency, and relative attractiveness.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="downloads">
+        <div class="section-heading">
+          <p class="eyebrow">Model package</p>
+          <h2>Download the system dynamics model variants.</h2>
+        </div>
+        <div class="download-list">
+          <a href="models/base_model.mdl">
+            <strong>base_model.mdl</strong>
+            <span>Baseline EV adoption model with default infrastructure, consumer utility, and technology assumptions.</span>
+          </a>
+          <a href="models/fast_charger_policy.mdl">
+            <strong>fast_charger_policy.mdl</strong>
+            <span>Policy variant testing a higher desired share of fast chargers and its effect on charging convenience.</span>
+          </a>
+          <a href="models/fuel_price_scenario.mdl">
+            <strong>fuel_price_scenario.mdl</strong>
+            <span>Scenario variant examining how increased fuel prices shift the operating-cost advantage toward EVs.</span>
+          </a>
+          <a href="models/technology_advancement_scenario.mdl">
+            <strong>technology_advancement_scenario.mdl</strong>
+            <span>Scenario variant for stronger EV range, efficiency, and technology improvement dynamics.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>System dynamics project showcase</span>
+      <a href="docs/DESIGN.md">Design document</a>
+    </footer>
+  </body>
+</html>
