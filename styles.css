@@ -333,6 +333,12 @@ footer a {
   font-weight: 800;
 }
 
+footer span:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
 @media (max-width: 920px) {
   .hero,
   .loop-grid,
