@@ -52,7 +52,7 @@ Scenario experiment where stronger EV range and performance improvements affect 
 
 ## GitHub Pages
 
-Project showcase:
+Project page:
 
 <https://fbaakyildiz.github.io/Germany-EV-Diffusion-System-Dynamics/>
 
