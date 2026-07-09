@@ -81,6 +81,23 @@ nav a {
   padding: 10px 13px;
 }
 
+nav a.github-nav-link {
+  display: inline-flex;
+  width: 106px;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 8px 13px;
+}
+
+nav a.github-nav-link img {
+  display: block;
+  width: 78px;
+  height: auto;
+  object-fit: contain;
+}
+
 main,
 footer {
   width: min(1180px, calc(100% - 32px));
