@@ -21,12 +21,18 @@
         overflow: hidden;
       }
 
+      .hero > * {
+        position: relative;
+        z-index: 1;
+      }
+
       .hero::before {
         position: absolute;
-        right: -72px;
-        bottom: 28px;
-        width: min(42vw, 420px);
-        height: min(42vw, 420px);
+        right: -150px;
+        bottom: -34px;
+        z-index: 0;
+        width: min(36vw, 360px);
+        height: min(36vw, 360px);
         border: 2px solid rgba(13, 148, 136, 0.22);
         border-radius: 50%;
         pointer-events: none;
@@ -34,27 +40,30 @@
           radial-gradient(circle, transparent 48%, rgba(13, 148, 136, 0.14) 49%, transparent 50%),
           conic-gradient(from 30deg, transparent 0 22%, rgba(13, 148, 136, 0.2) 22% 27%, transparent 27% 54%, rgba(37, 99, 235, 0.16) 54% 60%, transparent 60%);
         content: "";
-        opacity: 0.72;
+        opacity: 0.42;
       }
 
       .hero::after {
         position: absolute;
-        right: 74px;
-        bottom: 192px;
+        right: 26px;
+        bottom: 116px;
+        z-index: 0;
         width: 46px;
         height: 2px;
         background: rgba(13, 148, 136, 0.3);
         box-shadow: 86px 64px 0 rgba(37, 99, 235, 0.2), -58px 122px 0 rgba(13, 148, 136, 0.16);
         content: "";
+        opacity: 0.42;
         transform: rotate(32deg);
       }
 
       @media (max-width: 680px) {
         .hero::before {
-          right: -140px;
-          width: 280px;
-          height: 280px;
-          opacity: 0.36;
+          right: -168px;
+          bottom: -46px;
+          width: 260px;
+          height: 260px;
+          opacity: 0.24;
         }
 
         .hero::after {
