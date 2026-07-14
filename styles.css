@@ -118,11 +118,15 @@ footer {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.92fr);
   gap: 28px;
-  min-height: 610px;
-  align-items: center;
+  min-height: 690px;
+  align-items: start;
   padding: 54px 0 64px;
+}
+
+.hero-copy {
+  padding-top: 38px;
 }
 
 .eyebrow {
@@ -164,6 +168,45 @@ h2 {
   line-height: 1.65;
 }
 
+.model-facts {
+  display: grid;
+  max-width: 720px;
+  margin-top: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.model-facts div {
+  min-height: 78px;
+  border: 1px solid rgba(184, 218, 214, 0.82);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.86);
+  padding: 14px 15px;
+  backdrop-filter: blur(14px) saturate(1.1);
+}
+
+.model-facts strong,
+.model-facts span {
+  display: block;
+}
+
+.model-facts strong {
+  margin-bottom: 5px;
+  color: var(--green);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.model-facts span {
+  color: #344054;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -191,58 +234,324 @@ h2 {
   background: #ffffff;
 }
 
-.signal-panel {
-  border: 1px solid rgba(217, 226, 236, 0.9);
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow: var(--shadow);
-  padding: 18px;
+.causal-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(150, 201, 195, 0.72);
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(235, 252, 249, 0.68)),
+    radial-gradient(circle at 12% 10%, rgba(45, 212, 191, 0.2), transparent 17rem),
+    radial-gradient(circle at 92% 88%, rgba(37, 99, 235, 0.12), transparent 18rem);
+  box-shadow: 0 28px 70px rgba(15, 118, 110, 0.16);
+  padding: 16px;
+  backdrop-filter: blur(22px) saturate(1.2);
 }
 
-.signal-card {
-  border-radius: 16px;
-  background: linear-gradient(135deg, var(--green), var(--blue));
+.causal-panel::before {
+  position: absolute;
+  inset: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 23px;
+  content: "";
+  pointer-events: none;
+}
+
+.causal-panel::after {
+  position: absolute;
+  top: -90px;
+  right: -110px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(45, 212, 191, 0.14);
+  content: "";
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+.causal-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 112px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #0b4f49, #0f766e 58%, #2aa79c);
   color: #ffffff;
-  padding: 28px;
+  padding: 19px;
 }
 
-.signal-card span {
-  display: block;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 64px;
-  font-weight: 600;
-  line-height: 1;
+.causal-header > div {
+  display: grid;
+  gap: 8px;
 }
 
-.signal-card small {
-  color: rgba(255, 255, 255, 0.74);
+.causal-header div > span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.signal-grid {
-  display: grid;
-  gap: 10px;
-  margin-top: 12px;
+.causal-header strong {
+  max-width: 290px;
+  font-size: 22px;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
 }
 
-.signal-grid div {
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: #ffffff;
-  padding: 15px;
+.model-state {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.82);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 7px 9px;
+  white-space: nowrap;
 }
 
-.signal-grid strong,
-.signal-grid span {
+.model-state i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #5eead4;
+  box-shadow: 0 0 0 4px rgba(94, 234, 212, 0.14);
+}
+
+.causal-canvas {
+  position: relative;
+  z-index: 1;
+  margin: 10px 0 2px;
+  border: 1px solid rgba(183, 216, 213, 0.74);
+  border-radius: 18px;
+  background:
+    linear-gradient(rgba(15, 118, 110, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 118, 110, 0.035) 1px, transparent 1px),
+    rgba(255, 255, 255, 0.57);
+  background-size: 24px 24px;
+}
+
+.causal-svg {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
-.signal-grid span {
-  margin-top: 4px;
-  color: var(--muted);
-  font-size: 14px;
+.causal-links path {
+  fill: none;
+  stroke: #0f766e;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-dasharray: 7 8;
+  marker-end: url(#arrow-positive);
+  transition: opacity 220ms ease, stroke-width 220ms ease, filter 220ms ease;
+  animation: causal-flow 5.5s linear infinite;
+}
+
+.causal-links.negative path {
+  stroke: #c76d2a;
+  marker-end: url(#arrow-negative);
+}
+
+#arrow-positive path {
+  fill: #0f766e;
+}
+
+#arrow-negative path {
+  fill: #c76d2a;
+}
+
+.causal-links.is-emphasized path {
+  stroke-width: 3.4;
+  filter: drop-shadow(0 0 4px rgba(15, 118, 110, 0.28));
+}
+
+.causal-links.negative.is-emphasized path {
+  filter: drop-shadow(0 0 4px rgba(199, 109, 42, 0.3));
+}
+
+.causal-links.is-muted,
+.polarity-label.is-muted,
+.loop-badge.is-muted,
+.delay-tag.is-muted {
+  opacity: 0.16;
+}
+
+.causal-node {
+  cursor: default;
+  opacity: 0.62;
+  transition: opacity 220ms ease, filter 220ms ease;
+}
+
+.causal-node rect {
+  fill: rgba(255, 255, 255, 0.94);
+  stroke: rgba(15, 118, 110, 0.28);
+  stroke-width: 1.4;
+  filter: url(#node-shadow);
+  transition: fill 220ms ease, stroke 220ms ease, stroke-width 220ms ease;
+}
+
+.causal-node text {
+  fill: #153b38;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  text-anchor: middle;
+}
+
+.causal-node .node-sub {
+  fill: #6d817f;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 8px;
+  font-weight: 500;
+}
+
+.causal-node.is-emphasized {
+  opacity: 1;
+  filter: drop-shadow(0 7px 9px rgba(15, 118, 110, 0.08));
+}
+
+.causal-node.is-emphasized rect {
+  fill: #ffffff;
+  stroke: rgba(15, 118, 110, 0.66);
+  stroke-width: 2;
+}
+
+.polarity-label {
+  fill: #0f766e;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 17px;
+  font-weight: 700;
+  transition: opacity 220ms ease;
+}
+
+.polarity-label.negative {
+  fill: #b45309;
+}
+
+.loop-badge,
+.delay-tag {
+  transition: opacity 220ms ease, filter 220ms ease;
+}
+
+.loop-badge circle {
+  fill: rgba(15, 118, 110, 0.1);
+  stroke: rgba(15, 118, 110, 0.38);
+}
+
+.loop-badge text {
+  fill: #0f766e;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+.loop-badge.badge-b1 circle {
+  fill: rgba(199, 109, 42, 0.1);
+  stroke: rgba(199, 109, 42, 0.4);
+}
+
+.loop-badge.badge-b1 text {
+  fill: #b45309;
+}
+
+.loop-badge.is-emphasized {
+  filter: drop-shadow(0 0 7px rgba(15, 118, 110, 0.22));
+}
+
+.delay-tag rect {
+  fill: #e6f6f3;
+  stroke: rgba(15, 118, 110, 0.28);
+}
+
+.delay-tag text {
+  fill: #0f766e;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 8px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+.loop-controls {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.loop-control {
+  display: grid;
+  min-width: 0;
+  min-height: 58px;
+  align-content: center;
+  justify-items: start;
+  gap: 3px;
+  border: 1px solid rgba(183, 216, 213, 0.84);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #627471;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 9px 10px;
+  text-align: left;
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.loop-control span {
+  color: var(--green);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+}
+
+.loop-control:hover,
+.loop-control:focus-visible {
+  border-color: rgba(15, 118, 110, 0.5);
+  transform: translateY(-2px);
+}
+
+.loop-control:focus-visible {
+  outline: 3px solid rgba(45, 212, 191, 0.24);
+  outline-offset: 2px;
+}
+
+.loop-control.is-active {
+  border-color: rgba(15, 118, 110, 0.62);
+  background: #e5f7f4;
+  color: #153b38;
+  box-shadow: inset 0 0 0 1px rgba(15, 118, 110, 0.08);
+}
+
+.loop-explanation {
+  position: relative;
+  z-index: 1;
+  min-height: 52px;
+  margin: 10px 3px 0;
+  color: #526b68;
+  font-size: 12px;
+  line-height: 1.48;
+}
+
+@keyframes causal-flow {
+  to {
+    stroke-dashoffset: -60;
+  }
 }
 
 .section {
@@ -375,6 +684,19 @@ footer span:last-child {
   .download-list {
     grid-template-columns: 1fr;
   }
+
+  .hero {
+    min-height: 0;
+  }
+
+  .hero-copy {
+    padding-top: 12px;
+  }
+
+  .causal-panel {
+    width: min(620px, 100%);
+    justify-self: center;
+  }
 }
 
 @media (max-width: 680px) {
@@ -392,7 +714,72 @@ footer span:last-child {
     font-size: 43px;
   }
 
+  .hero {
+    gap: 20px;
+    padding: 36px 0 48px;
+  }
+
+  .model-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .model-facts div {
+    min-height: 0;
+  }
+
+  .causal-panel {
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  .causal-header {
+    min-height: 0;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 17px;
+  }
+
+  .causal-header strong {
+    max-width: none;
+    font-size: 20px;
+  }
+
+  .model-state {
+    align-self: flex-start;
+  }
+
+  .loop-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .loop-control {
+    min-height: 46px;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-items: start;
+    gap: 8px;
+  }
+
+  .section.dark {
+    width: 100%;
+    margin-left: 0;
+  }
+
   .button {
     width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .causal-links path {
+    animation: none;
+  }
+
+  .loop-control {
+    transition: none;
   }
 }
