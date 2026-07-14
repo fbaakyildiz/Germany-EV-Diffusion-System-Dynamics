@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=causal-loop-1" />
+    <link rel="stylesheet" href="styles.css?v=causal-loop-2" />
     <style>
       .hero {
         position: relative;
@@ -125,12 +125,12 @@
           <div class="causal-header">
             <div>
               <span>Dynamic hypothesis</span>
-              <strong>Adoption changes the system that drives adoption.</strong>
+              <strong>Adoption feeds back through infrastructure, social proof, and saturation.</strong>
             </div>
             <span class="model-state"><i></i> Model active</span>
           </div>
           <div class="causal-canvas">
-            <svg class="causal-svg" viewBox="0 0 430 430" role="img" aria-labelledby="causal-title causal-desc">
+            <svg class="causal-svg" viewBox="0 0 560 430" role="img" aria-labelledby="causal-title causal-desc">
               <title id="causal-title">Electric vehicle diffusion causal loop diagram</title>
               <desc id="causal-desc">Reinforcing charging infrastructure and word-of-mouth loops interact with a balancing market-saturation loop.</desc>
               <defs>
@@ -146,81 +146,91 @@
               </defs>
 
               <g class="causal-links loop-r1 is-emphasized" data-loop="r1">
-                <path d="M 250 65 C 320 66, 350 92, 350 142" />
-                <path d="M 350 194 C 350 250, 324 277, 282 301" />
-                <path d="M 236 335 C 174 352, 117 330, 86 292" />
-                <path d="M 71 239 C 55 181, 78 133, 126 106" />
-                <path d="M 172 75 C 185 61, 204 57, 220 61" />
+                <path d="M 223 192 C 176 184, 137 158, 115 134" />
+                <path d="M 169 98 C 186 75, 203 63, 224 60" />
+                <path d="M 352 60 C 383 64, 410 77, 433 96" />
+                <path d="M 454 148 C 478 188, 479 228, 457 264" />
+                <path d="M 411 296 C 366 286, 333 265, 307 244" />
               </g>
               <g class="causal-links loop-r2" data-loop="r2">
-                <path d="M 189 102 C 150 133, 144 164, 153 193" />
-                <path d="M 151 235 C 130 248, 109 258, 92 265" />
+                <path d="M 284 244 C 285 270, 285 292, 285 314" />
+                <path d="M 345 342 C 385 337, 420 319, 444 316" />
+                <path d="M 424 264 C 386 253, 341 239, 309 225" />
               </g>
               <g class="causal-links loop-b1 negative" data-loop="b1">
-                <path d="M 239 104 C 273 139, 277 178, 262 204" />
-                <path d="M 237 236 C 189 246, 142 256, 94 272" />
+                <path d="M 224 234 C 181 243, 146 256, 120 266" />
+                <path d="M 174 300 C 244 337, 330 331, 394 304" />
+                <path d="M 424 264 C 386 253, 341 239, 309 225" />
               </g>
 
               <g class="polarity-label loop-r1 is-emphasized" data-loop="r1">
-                <text x="302" y="76">+</text>
-                <text x="350" y="244">+</text>
-                <text x="168" y="350">+</text>
-                <text x="55" y="176">+</text>
-                <text x="199" y="52">+</text>
+                <text x="166" y="171">+</text>
+                <text x="193" y="74">+</text>
+                <text x="392" y="76">+</text>
+                <text x="481" y="206">+</text>
+                <text x="359" y="278">+</text>
               </g>
               <g class="polarity-label loop-r2" data-loop="r2">
-                <text x="148" y="143">+</text>
-                <text x="116" y="247">+</text>
+                <text x="296" y="284">+</text>
+                <text x="397" y="350">+</text>
+                <text x="372" y="247">+</text>
               </g>
               <g class="polarity-label loop-b1 negative" data-loop="b1">
-                <text x="273" y="160">+</text>
-                <text x="182" y="250">−</text>
+                <text x="165" y="247">−</text>
+                <text x="270" y="340">+</text>
+                <text x="373" y="247">+</text>
               </g>
 
-              <g class="causal-node node-share" data-loops="r1 r2 b1" transform="translate(172 38)">
-                <rect width="86" height="70" rx="17" />
-                <text x="43" y="29">EV share</text>
-                <text class="node-sub" x="43" y="48">vehicle stock</text>
+              <g class="causal-node node-share is-emphasized" data-loops="r1 r2 b1" transform="translate(220 184)">
+                <rect width="120" height="60" rx="18" />
+                <text x="60" y="27">EV share</text>
+                <text class="node-sub" x="60" y="45">vehicle stock</text>
               </g>
-              <g class="causal-node node-chargers" data-loops="r1" transform="translate(306 140)">
-                <rect width="90" height="58" rx="16" />
-                <text x="45" y="25">Charging</text>
-                <text class="node-sub" x="45" y="42">stations</text>
+              <g class="causal-node node-demand is-emphasized" data-loops="r1" transform="translate(42 82)">
+                <rect width="128" height="56" rx="17" />
+                <text x="64" y="25">Charger</text>
+                <text class="node-sub" x="64" y="42">demand</text>
               </g>
-              <g class="causal-node node-convenience" data-loops="r1" transform="translate(228 300)">
-                <rect width="112" height="64" rx="17" />
-                <text x="56" y="27">Charging</text>
-                <text class="node-sub" x="56" y="46">convenience</text>
+              <g class="causal-node node-build is-emphasized" data-loops="r1" transform="translate(224 32)">
+                <rect width="128" height="56" rx="17" />
+                <text x="64" y="25">Station</text>
+                <text class="node-sub" x="64" y="42">build-out</text>
               </g>
-              <g class="causal-node node-adoption" data-loops="r1 r2 b1" transform="translate(34 238)">
-                <rect width="102" height="64" rx="17" />
-                <text x="51" y="27">Adoption</text>
-                <text class="node-sub" x="51" y="46">rate</text>
+              <g class="causal-node node-convenience is-emphasized" data-loops="r1" transform="translate(388 96)">
+                <rect width="130" height="56" rx="17" />
+                <text x="65" y="25">Charging</text>
+                <text class="node-sub" x="65" y="42">convenience</text>
               </g>
-              <g class="causal-node node-social" data-loops="r2" transform="translate(112 188)">
-                <rect width="92" height="52" rx="15" />
-                <text x="46" y="23">Social</text>
-                <text class="node-sub" x="46" y="39">exposure</text>
+              <g class="causal-node node-adoption is-emphasized" data-loops="r1 r2 b1" transform="translate(394 264)">
+                <rect width="126" height="60" rx="18" />
+                <text x="63" y="27">Adoption</text>
+                <text class="node-sub" x="63" y="45">rate</text>
               </g>
-              <g class="causal-node node-saturation" data-loops="b1" transform="translate(220 202)">
-                <rect width="94" height="48" rx="15" />
-                <text x="47" y="29">Saturation</text>
+              <g class="causal-node node-social" data-loops="r2" transform="translate(224 314)">
+                <rect width="122" height="54" rx="17" />
+                <text x="61" y="24">Social</text>
+                <text class="node-sub" x="61" y="41">exposure</text>
+              </g>
+              <g class="causal-node node-market" data-loops="b1" transform="translate(42 264)">
+                <rect width="132" height="56" rx="17" />
+                <text x="66" y="25">Remaining</text>
+                <text class="node-sub" x="66" y="42">market</text>
               </g>
 
-              <g class="loop-badge badge-r1 is-emphasized" data-loop="r1" transform="translate(274 253)">
+              <g class="loop-badge badge-r1 is-emphasized" data-loop="r1" transform="translate(116 42)">
                 <circle r="21" />
                 <text y="5">R1</text>
               </g>
-              <g class="loop-badge badge-r2" data-loop="r2" transform="translate(150 151)">
+              <g class="loop-badge badge-r2" data-loop="r2" transform="translate(350 372)">
                 <circle r="19" />
                 <text y="5">R2</text>
               </g>
-              <g class="loop-badge badge-b1" data-loop="b1" transform="translate(243 159)">
+              <g class="loop-badge badge-b1" data-loop="b1" transform="translate(122 352)">
                 <circle r="19" />
                 <text y="5">B1</text>
               </g>
 
-              <g class="delay-tag loop-r1 is-emphasized" data-loop="r1" transform="translate(300 104)">
+              <g class="delay-tag loop-r1 is-emphasized" data-loop="r1" transform="translate(324 78)">
                 <rect width="70" height="24" rx="12" />
                 <text x="35" y="16">DELAY</text>
               </g>
@@ -352,6 +362,7 @@
         };
 
         controls.forEach((control) => control.addEventListener("click", () => selectLoop(control.dataset.loop)));
+        selectLoop("r1");
 
         if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && window.anime) {
           anime({
